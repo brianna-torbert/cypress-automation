@@ -11,6 +11,13 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
+
+Cypress.Commands.add('login', (username, password) => {
+  cy.get('[name="username"]').type(username)
+  cy.get('[name="password"]').type(password)
+  cy.get('.oxd-button').click()
+})
+
 //
 //
 // -- This is a child command --
